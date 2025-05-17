@@ -79,3 +79,8 @@ public:
     // Fungsi friend untuk akses gaji staff oleh Universitas
     friend float lihatGajiStaff(Staff* s);
 };
+
+// Fungsi friend untuk akses gaji staff
+float lihatGajiStaff(Staff* s) {
+    return s->gaji;
+}
