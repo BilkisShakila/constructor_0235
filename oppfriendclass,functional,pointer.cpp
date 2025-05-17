@@ -95,3 +95,33 @@ public:
         cout << "Gaji Staff     : " << lihatGajiStaff(s) << endl;
     }
 };
+
+int main() {
+    // Membuat objek
+    Mahasiswa mhs("Budi", 12345);
+    Dosen dosen("Dr. Andi", "001122", "Lektor", 12000000);
+    Staff staff("Siti", 201, 7000000);
+    Universitas univ;
+
+    // Dosen memberi nilai
+    dosen.beriNilai(&mhs, 85.5);
+
+    // Staff mengubah pangkat dosen
+    staff.ubahPangkat(&dosen, "Guru Besar");
+
+    // Tampilkan data
+    cout << "=== DATA MAHASISWA ===" << endl;
+    mhs.tampilkanInfo();
+
+    cout << "\n=== DATA DOSEN ===" << endl;
+    dosen.tampilkanInfo();
+
+    cout << "\n=== DATA STAFF ===" << endl;
+    staff.tampilkanInfo();
+
+    cout << "\n=== AKSES GAJI MELALUI UNIVERSITAS ===" << endl;
+    univ.lihatGaji(&dosen);
+    univ.lihatGaji(&staff);
+
+    return 0;
+}
