@@ -84,3 +84,14 @@ public:
 float lihatGajiStaff(Staff* s) {
     return s->gaji;
 }
+
+class Universitas {
+public:
+    void lihatGaji(Dosen* d) {
+        cout << "Gaji Dosen     : " << aksesGaji(d) << endl;
+    }
+
+    void lihatGaji(Staff* s) {
+        cout << "Gaji Staff     : " << lihatGajiStaff(s) << endl;
+    }
+};
