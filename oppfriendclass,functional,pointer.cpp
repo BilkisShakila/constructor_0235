@@ -39,3 +39,9 @@ public:
     void beriNilai(Mahasiswa* m, float nilaiBaru) {
         m->nilai = nilaiBaru;
     }
+
+      void tampilkanInfo() {
+        cout << "Nama Dosen     : " << nama << endl;
+        cout << "NIDN           : " << nidn << endl;
+        cout << "Pangkat        : " << pangkat << endl;
+    }
