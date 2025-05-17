@@ -45,3 +45,15 @@ public:
         cout << "NIDN           : " << nidn << endl;
         cout << "Pangkat        : " << pangkat << endl;
     }
+
+      // Hanya Staff yang bisa mengubah pangkat
+    friend class Staff;
+
+    // Fungsi friend untuk akses gaji, digunakan oleh Universitas
+    friend float aksesGaji(Dosen* d);
+};
+
+// Fungsi friend untuk akses gaji dosen
+float aksesGaji(Dosen* d) {
+    return d->gaji;
+}
