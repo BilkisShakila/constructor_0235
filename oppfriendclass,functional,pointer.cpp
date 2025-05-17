@@ -57,3 +57,25 @@ public:
 float aksesGaji(Dosen* d) {
     return d->gaji;
 }
+
+class Staff {
+private:
+    string nama;
+    int idStaff;
+    float gaji;
+
+public:
+    Staff(string pNama, int pId, float pGaji) : nama(pNama), idStaff(pId), gaji(pGaji) {}
+
+    void ubahPangkat(Dosen* d, string pangkatBaru) {
+        d->pangkat = pangkatBaru;
+    }
+
+    void tampilkanInfo() {
+        cout << "Nama Staff     : " << nama << endl;
+        cout << "ID Staff       : " << idStaff << endl;
+    }
+
+    // Fungsi friend untuk akses gaji staff oleh Universitas
+    friend float lihatGajiStaff(Staff* s);
+};
