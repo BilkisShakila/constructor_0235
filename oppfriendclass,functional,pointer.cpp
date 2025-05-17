@@ -49,11 +49,6 @@ public:
     friend float aksesGaji(Dosen* d);
 };
 
-// Fungsi friend untuk akses gaji dosen
-float aksesGaji(Dosen* d) {
-    return d->gaji;
-}
-
 class Staff {
 private:
     string nama;
@@ -61,20 +56,12 @@ private:
     float gaji;
 
 public:
-    Staff(string pNama, int pId, float pGaji) : nama(pNama), idStaff(pId), gaji(pGaji) {}
-
-    void ubahPangkat(Dosen* d, string pangkatBaru) {
-        d->pangkat = pangkatBaru;
-    }
+    Staff(string pNama, int pId, float pGaji) : nama(pNama), idStaff(pId), gaji(pGaji) {
 
     void tampilkanInfo() {
         cout << "Nama Staff     : " << nama << endl;
         cout << "ID Staff       : " << idStaff << endl;
     }
-
-    // Fungsi friend untuk akses gaji staff oleh Universitas
-    friend float lihatGajiStaff(Staff* s);
-};
 
 class Universitas {
 public:
@@ -89,9 +76,9 @@ public:
 
 int main() {
     // Membuat objek
-    Mahasiswa mhs("Budi", 12345);
-    Dosen dosen("Dr. Andi", "001122", "Lektor", 12000000);
-    Staff staff("Siti", 201, 7000000);
+    Mahasiswa mhs("Bilkis");
+    Dosen dosen("Dr. fitri", "001124", "Lektor", 11000000);
+    Staff staff("alana", 97, 6000000);
     Universitas univ;
 
     // Dosen memberi nilai
@@ -109,10 +96,6 @@ int main() {
 
     cout << "\n=== DATA STAFF ===" << endl;
     staff.tampilkanInfo();
-
-    cout << "\n=== AKSES GAJI MELALUI UNIVERSITAS ===" << endl;
-    univ.lihatGaji(&dosen);
-    univ.lihatGaji(&staff);
 
     return 0;
 }
