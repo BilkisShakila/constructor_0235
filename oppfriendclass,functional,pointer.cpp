@@ -2,15 +2,11 @@
 #include <string>
 using namespace std;
 
-// Deklarasi awal agar bisa digunakan sebagai friend
-    class Dosen;
-    class Staff;
-
 class Mahasiswa {
 private:
-    string nama;
-    int nim;
-    float nilai;
+    string nama; // karena menggunakan huruf
+    int nim; // karena bilangan bulat 
+    float nilai; // bilangan yang bisa menggunaka koma 
 
 public:
     Mahasiswa(string pNama, int pNim) : nama(pNama), nim(pNim), nilai(0.0f) {}
